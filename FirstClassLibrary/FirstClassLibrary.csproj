@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+<PropertyGroup>
+    <PackageId>My.FirstClassLibrary</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Jose David Colmenarez Gil</Authors>
+    <Company>Colmenarez.Dev</Company>
+    <Description>This is a Razor component library with a cool modal window component.</Description>
+    <TargetFramework>net8.0</TargetFramework>
+</PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.25" />
+  </ItemGroup>
+
+</Project>

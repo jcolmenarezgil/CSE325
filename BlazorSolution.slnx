@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="FirstClassLibrary/FirstClassLibrary.csproj" />
+  <Project Path="MyBlazorApp/MyBlazorApp.csproj" />
+</Solution>
