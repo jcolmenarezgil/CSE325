@@ -7,8 +7,8 @@
 [Rr]elease/
 x64/
 x86/
-[Bb]in/
-[Oo]bj/
+bin/
+obj/
 [Ll]og/
 [Ll]ogs/
 *.binlog
