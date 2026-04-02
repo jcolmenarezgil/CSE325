@@ -19,6 +19,12 @@
     }
 </nav>
 <article>
+
+    <div class="score-board">
+        <p>Player 1 Streak: <strong>@State.Player1WinStreak</strong></p>
+        <p>Player 2 Streak: <strong>@State.Player2WinStreak</strong></p>
+    </div>
+
     @winnerMessage <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
     <br />
     <span class="alert-danger">@errorMessage</span>
@@ -69,6 +75,19 @@
             var turn = State.CurrentTurn;
             var landingRow = State.PlayPiece(col);
             pieces[turn] = $"player{player} col{col} drop{landingRow}";
+
+            var result = State.CheckForWin();
+            if (result != GameState.WinState.No_Winner)
+            {
+                State.AccumulateWin(result);
+                winnerMessage = result switch
+                {
+                    GameState.WinState.Player1_Wins => "¡Player 1 Win!",
+                    GameState.WinState.Player2_Wins => "¡Player 2 Win!",
+                    GameState.WinState.Tie => "¡Tie Match!",
+                    _ => ""
+                };
+            }
         }
         catch (ArgumentException ex)
         {

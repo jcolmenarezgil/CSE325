@@ -191,4 +191,26 @@ public class GameState
 
     }
 
+    public int Player1WinStreak { get; private set; } = 0;
+    public int Player2WinStreak { get; private set; } = 0;
+
+    public void AccumulateWin(WinState winner)
+    {
+        switch (winner)
+        {
+            case WinState.Player1_Wins:
+                Player1WinStreak++;
+                Player2WinStreak = 0; 
+                break;
+            case WinState.Player2_Wins:
+                Player2WinStreak++;
+                Player1WinStreak = 0;
+                break;
+            case WinState.Tie:
+                Player1WinStreak = 0;
+                Player2WinStreak = 0;
+                break;
+        }
+    }
+
 }
