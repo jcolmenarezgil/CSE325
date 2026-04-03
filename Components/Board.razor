@@ -93,13 +93,6 @@
         {
             errorMessage = ex.Message;
         }
-        winnerMessage = State.CheckForWin() switch
-        {
-            GameState.WinState.Player1_Wins => "Player 1 Wins!",
-            GameState.WinState.Player2_Wins => "Player 2 Wins!",
-            GameState.WinState.Tie => "It's a tie!",
-            _ => ""
-        };
     }
 
     void ResetGame()
